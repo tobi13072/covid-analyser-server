@@ -1,15 +1,13 @@
 package com.example.covidserver.DTO;
 
 import com.example.covidserver.domain.Country;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.io.Serializable;
 
 @Getter
 @Setter
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class CountryStatDTO implements Serializable {
