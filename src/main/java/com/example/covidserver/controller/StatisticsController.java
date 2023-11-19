@@ -5,6 +5,7 @@ import com.example.covidserver.service.CountryStatService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.transaction.annotation.Isolation;
@@ -59,11 +60,8 @@ public class StatisticsController {
     }
 
     @PostMapping("/update")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<Boolean> updateStatistics(@RequestBody List<CountryStatDTO> updatedObjects) {
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        if (auth != null && auth.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ADMIN"))) {
-            return ResponseEntity.ok(this.statService.updateStatisticsForGivenCountry(updatedObjects));
-        }
-        return new ResponseEntity<Boolean>(Boolean.FALSE,HttpStatus.UNAUTHORIZED);
+        return ResponseEntity.ok(this.statService.updateStatisticsForGivenCountry(updatedObjects));
     }
 }
