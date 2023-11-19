@@ -1,11 +1,13 @@
 package com.example.covidserver.service;
 
+import com.example.covidserver.domain.Continent;
 import com.example.covidserver.repository.ContinentRepository;
 import com.example.covidserver.DTO.ContinentDTO;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Service
@@ -19,5 +21,15 @@ public class ContinentService {
                 continent.getContinent_id(),
                 continent.getContinent_name()
         )).collect(Collectors.toList());
+    }
+
+
+    public void saveNewContinentIfNotExists(String continent) {
+        Continent founded = continentRepository.findContinentByName(continent).orElse(null);
+        if (Objects.isNull(founded)) {
+            Continent newContinent = new Continent();
+            newContinent.setContinent_name(continent);
+            continentRepository.save(newContinent);
+        }
     }
 }
