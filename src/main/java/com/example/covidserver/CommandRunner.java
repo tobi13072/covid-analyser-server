@@ -1,8 +1,8 @@
 package com.example.covidserver;
 
+import com.example.covidserver.domain.dictionary.Role;
 import com.example.covidserver.service.ContinentService;
 import com.example.covidserver.service.UserService;
-import com.example.covidserver.domain.dictionary.Role;
 import com.example.covidserver.service.WHORegionService;
 import lombok.AllArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
@@ -36,7 +36,7 @@ public class CommandRunner implements CommandLineRunner {
     private final WHORegionService whoRegionService;
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
 
         //Admin user creation if not exists
         userService.saveNewUser(ADMIN_USERNAME, ADMIN_PASSWORD, Role.ADMIN);

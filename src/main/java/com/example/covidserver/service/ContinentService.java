@@ -1,8 +1,8 @@
 package com.example.covidserver.service;
 
+import com.example.covidserver.DTO.ContinentDTO;
 import com.example.covidserver.domain.Continent;
 import com.example.covidserver.repository.ContinentRepository;
-import com.example.covidserver.DTO.ContinentDTO;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
