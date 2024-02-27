@@ -2,7 +2,10 @@ package com.example.covidserver.service;
 
 import com.example.covidserver.DTO.WHORegionDTO;
 import com.example.covidserver.TestConfig;
+import com.example.covidserver.repository.WHORegionRepository;
 import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -17,6 +20,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class WHORegionServiceTests {
     @Autowired
     private WHORegionService whoRegionService;
+
+    @Autowired
+    private WHORegionRepository whoRegionRepository;
+
 
     @Test
     public void getAllWhoRegionTest() {

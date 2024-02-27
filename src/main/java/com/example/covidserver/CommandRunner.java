@@ -1,8 +1,14 @@
 package com.example.covidserver;
 
+
+import com.example.covidserver.service.ContinentService;
+import com.example.covidserver.service.UserService;
+import com.example.covidserver.domain.dictionary.Role;
+
 import com.example.covidserver.domain.dictionary.Role;
 import com.example.covidserver.service.ContinentService;
 import com.example.covidserver.service.UserService;
+
 import com.example.covidserver.service.WHORegionService;
 import lombok.AllArgsConstructor;
 import org.springframework.boot.CommandLineRunner;

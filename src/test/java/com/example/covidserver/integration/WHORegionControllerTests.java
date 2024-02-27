@@ -35,12 +35,14 @@ public class WHORegionControllerTests {
     private MockMvc mvc;
 
     @Before
-    public void setUp() {
+    public void setUp() throws Exception {
+
 
     }
 
     @Test
-    @WithMockUser(username = "franek", roles = "USER")
+    @WithMockUser(username = "franek",roles = "USER")
+
     public void getAllRegion() throws Exception {
         mvc.perform(get("/who/all").contentType(MediaType.APPLICATION_JSON))
                 .andDo(print())
@@ -48,8 +50,9 @@ public class WHORegionControllerTests {
                 .andExpect(content()
                         .contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$", hasSize(6)))
-                .andExpect(jsonPath("$[0].who_id", is(1)))
-                .andExpect(jsonPath("$[0].who_name", is("Americas")));
+                .andExpect(jsonPath("$[0].who_id",is(1)))
+                .andExpect(jsonPath("$[0].who_name",is("Americas")));
+
 
     }
 

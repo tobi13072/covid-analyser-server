@@ -1,7 +1,11 @@
 package com.example.covidserver.service;
 
 import com.example.covidserver.DTO.ContinentDTO;
+import com.example.covidserver.DTO.WHORegionDTO;
 import com.example.covidserver.TestConfig;
+import com.example.covidserver.repository.ContinentRepository;
+import com.example.covidserver.repository.WHORegionRepository;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
