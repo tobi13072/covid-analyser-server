@@ -5,6 +5,7 @@ import com.example.covidserver.DTO.WHORegionDTO;
 import com.example.covidserver.TestConfig;
 import com.example.covidserver.repository.ContinentRepository;
 import com.example.covidserver.repository.WHORegionRepository;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class ContinentServiceTests {
     @Autowired
     private ContinentService continentService;
+
     @Test
     public void getAllWhoRegionTest() {
         //given

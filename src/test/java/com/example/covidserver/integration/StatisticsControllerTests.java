@@ -12,7 +12,9 @@ import com.example.covidserver.repository.CountryStatRepository;
 import com.example.covidserver.repository.WHORegionRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.assertj.core.util.Lists;
+
 import org.hibernate.stat.Statistics;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
@@ -28,10 +30,10 @@ import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.List;
 
-import static org.springframework.test.web.servlet.request .MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = TestConfig.class)
@@ -57,12 +59,15 @@ public class StatisticsControllerTests {
 
     @Before
     public void setUp() throws Exception {
+
         country = addCountry();
     }
 
     @Test
     @WithMockUser(username = "Bobi", roles = "ADMIN")
+
     public void addValidStatisticsTest() throws Exception{
+
         CountryStatDTO jsonBody = createCountryStat();
         createCountryStatEntity();
         ObjectMapper objectMapper = new ObjectMapper();
@@ -104,6 +109,7 @@ public class StatisticsControllerTests {
                 .total_recovered(1)
                 .build();
     }
+  
     private Country addCountry() {
         WHORegion whoRegion = whoRegionRepository.findWHORegionByName("Europe").get();
         Continent continent = continentRepository.findContinentByName("Europe").get();

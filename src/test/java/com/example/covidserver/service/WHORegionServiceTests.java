@@ -5,6 +5,7 @@ import com.example.covidserver.TestConfig;
 import com.example.covidserver.repository.WHORegionRepository;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
+
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -22,6 +23,7 @@ public class WHORegionServiceTests {
 
     @Autowired
     private WHORegionRepository whoRegionRepository;
+
 
     @Test
     public void getAllWhoRegionTest() {

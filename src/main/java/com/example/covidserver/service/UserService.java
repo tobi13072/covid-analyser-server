@@ -1,8 +1,8 @@
 package com.example.covidserver.service;
 
-import com.example.covidserver.repository.UserRepository;
 import com.example.covidserver.domain.User;
 import com.example.covidserver.domain.dictionary.Role;
+import com.example.covidserver.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

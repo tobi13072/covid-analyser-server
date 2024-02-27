@@ -1,8 +1,8 @@
 package com.example.covidserver.auth.api;
 
-import com.example.covidserver.auth.dto.RegisterRequest;
 import com.example.covidserver.auth.dto.AuthenticationRequest;
 import com.example.covidserver.auth.dto.AuthenticationResponse;
+import com.example.covidserver.auth.dto.RegisterRequest;
 import com.example.covidserver.auth.service.AuthenticationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
